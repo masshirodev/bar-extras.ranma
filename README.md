@@ -55,6 +55,9 @@ nowplaying keeps one `playerctl --follow` running then, and stops it when
 the module goes off screen; disk and docker run their command every
 bar_extras.disk_interval / docker_interval seconds; net reads two files
 in /proc every bar_extras.net_interval seconds, with no process at all.
+With a ranma nested inside this one focused (ranma 0.3.0 or newer), net,
+disk and docker show the inner machine's when it has the same module;
+nowplaying always shows this desk's (`nested = "own"`).
 
 Needs ranma 0.2.3 or newer, the first with module_shown and module_hidden.
 
