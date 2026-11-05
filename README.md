@@ -39,7 +39,7 @@ bar-extras: four bar modules, each on only where you put it.
               bar_extras.player picks players, bar_extras.ignore_player
               leaves some out (an mpv playing a video wallpaper).
   net         the interface the default route goes out of, and its
-              traffic each second, from /proc/net/dev: `↓1.2M ↑40K`;
+              traffic each second, from /proc/net/dev: `↓ 1.2M  ↑ 40K`;
               `net down` (urgent) when it is down. A click names it.
   disk        how full a mount is (`/` by default): `/ 63%`, urgent from
               bar_extras.disk_warn on. Several mounts, space-separated,
@@ -70,7 +70,7 @@ ranma's plugin API: https://github.com/masshirodev/ranma/blob/main/doc/CONFIG.md
 | Module | Shows | A click |
 | --- | --- | --- |
 | `nowplaying` | `▶ Artist – Title`, `‖` paused; nothing with no player | Play / pause |
-| `net` | `↓1.2M ↑40K` per second on the default route's interface; `net down` | Names the interface |
+| `net` | `↓ 1.2M  ↑ 40K` per second on the default route's interface; `net down` | Names the interface |
 | `disk` | `/ 63%` per mount; urgent from `bar_extras.disk_warn` | What is free |
 | `docker` | `◆ 6` containers running; nothing when docker does not answer | docker.ranma's screen, when installed |
 

@@ -6,7 +6,7 @@
 --               bar_extras.player picks players, bar_extras.ignore_player
 --               leaves some out (an mpv playing a video wallpaper).
 --   net         the interface the default route goes out of, and its
---               traffic each second, from /proc/net/dev: `↓1.2M ↑40K`;
+--               traffic each second, from /proc/net/dev: `↓ 1.2M  ↑ 40K`;
 --               `net down` (urgent) when it is down. A click names it.
 --   disk        how full a mount is (`/` by default): `/ 63%`, urgent from
 --               bar_extras.disk_warn on. Several mounts, space-separated,
@@ -278,8 +278,10 @@ ranma.module("net", {
   render = function()
     if net.state == "down" then return { text = "net down", style = "urgent" } end
     if net.state ~= "up" then return nil end
-    if not net.ready then return { text = "↓— ↑—", style = "dim" } end
-    return "↓" .. rate(net.down) .. " ↑" .. rate(net.up)
+    -- A cell between each arrow and its number: the arrows are narrow
+    -- glyphs that run into the digits in most fonts.
+    if not net.ready then return { text = "↓ — ↑ —", style = "dim" } end
+    return "↓ " .. rate(net.down) .. "  ↑ " .. rate(net.up)
   end,
   on_click = function()
     ranma.toast("net: " .. (net.iface or "no interface") .. (net.state == "down" and " is down" or ""))
